@@ -594,11 +594,6 @@ static ohmd_device* open_device(ohmd_driver* driver, ohmd_device_desc* desc)
 			priv->base.properties.hsize/2 - priv->base.properties.lens_sep/2,
 			eye_to_screen_distance);
 
-	float eye_to_screen_distance = 0.023226876441867737;
-	priv->base.properties.fov = 2 * atan2f(
-		priv->base.properties.hsize / 2 - priv->base.properties.lens_sep / 2,
-		eye_to_screen_distance);
-
 	// set up device callbacks
 	priv->base.update = update_device;
 	priv->base.close = close_device;
